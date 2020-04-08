@@ -1,0 +1,14 @@
+appVersion: v1
+kind: LimitRange
+metadata: 
+  name: cpu-mem-limit-range
+spec:
+  limits:
+  - default:
+      cpu: 0.5
+      mem: 128Mi
+    defaultRequest:
+      cpu: 0.25
+      mem: 64Mi
+    type: container
+     
