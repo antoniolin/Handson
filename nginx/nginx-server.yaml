@@ -39,7 +39,7 @@ spec:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClass: rook-ceph-block
+      storageClassName: rook-ceph-block
       resources:
         requests:
           storage: 1Gi
