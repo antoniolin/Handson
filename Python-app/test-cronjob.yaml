@@ -11,4 +11,8 @@ spec:
           containers:
           - name: hello
             image: localhost:5000/antonio/test-job-v1
+            args:
+            - /bin/sh
+            - -c
+            - date; echo H123213ernet12321er
           restartPolicy: OnFailure
