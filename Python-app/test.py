@@ -19,7 +19,9 @@ def send(event, data):
     server.sendmail(sender, targets, msg.as_string())
 
 def main():
-    send()
+    event = 0
+    data = 0
+    send(event, data)
 
 if __name__ == "__main__":
     main()
