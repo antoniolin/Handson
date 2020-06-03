@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 
-def send():
+def send(event, data):
     smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
     smtp_ssl_port = 465
     username = 'suferparadisetony@gmail.com'
