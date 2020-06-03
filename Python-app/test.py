@@ -17,3 +17,9 @@ def send():
     server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
     server.login(username, password)
     server.sendmail(sender, targets, msg.as_string())
+
+def main():
+    send()
+
+if __name__ == "__main__":
+    main()
