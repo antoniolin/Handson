@@ -1,27 +1,20 @@
-import smtplib
-from email.mime.text import MIMEText
+import smtplib, ssl
 
-def send(event, data):
-    smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
-    smtp_ssl_port = 465
-    username = 'suferparadisetony@gmail.com'
-    password = '!Tony12089'
-    sender = 'suferparadisetony@gmail.com'
-    targets = ['antoniol@supermicro.com']
+def main(event, data):
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = "suferparadisetony@gmail.com"
+    receiver_email = "antoniol@supermicro.com"
+    password = "!Tony12089"
+    message = """\
+    Subject: Hi there
 
-    msg = MIMEText('Hi, how are you today?')
-    msg['Subject'] = 'Hello'
-    msg['From'] = sender
-    msg['To'] = ', '.join(targets)
+    This message is sent from Python."""
 
-    server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
-    server.login(username, password)
-    server.sendmail(sender, targets, msg.as_string())
-
-def main():
-    event = 0
-    data = 0
-    send(event, data)
-
-if __name__ == "__main__":
-    main()
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls(context=context)
+        server.ehlo()  # Can be omitted
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, message)
