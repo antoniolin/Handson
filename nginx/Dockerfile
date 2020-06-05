@@ -1,2 +1,2 @@
-FROM localhost:5000/antonio/http-server-v1
+FROM nginx:latest
 COPY . /usr/share/nginx/html
