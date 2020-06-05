@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: localhost:5000/antonio/http-server-v1
         ports:
         - containerPort: 80
         volumeMounts:
