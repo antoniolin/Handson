@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles.css">
+        <title>This is a demo</title>
+    </head>
+
+    <body>
+        <header> 
+            <h1>Tic Tac Toe Web Game!</h1>
+        </header>
+        <canvas id="cover"></canvas>
+        <table class="play_area" id = "play_area_id">
+            <tr class="table_row">
+                <td id="block_00" class = "block"></td>
+                <td id="block_01" class = "block"></td>
+                <td id="block_02" class = "block"></td>
+            </tr>
+            <tr class="table_row">
+                <td id="block_03" class = "block"></td>
+                <td id="block_04" class = "block"></td>
+                <td id="block_05" class = "block"></td>
+            </tr>            
+            <tr class="table_row">
+                <td id="block_06" class = "block"></td>
+                <td id="block_07" class = "block"></td>
+                <td id="block_08" class = "block"></td>
+            </tr>
+        </table>
+        <div class="endgame" id="end_game">
+            <div>
+                <button id = "reset_game">Reset Game</button>
+            </div>
+        </div>
+
+        <form id="playerinformation">
+            Player 1:
+            <br>
+            <input type = "text" class = "input_column" id="input_column_1"></input>
+            <br>
+            <br>
+            Player 2:
+            <br>
+            <input type = "text" class = "input_column" id="input_column_2"></input>
+            <input type = "submit" value="Add Player" class="add_player_btn"></input>
+            <div class ="player_board_class" id="player_board_id"> Player 1 vs Player 2</div>
+
+        </form>
+
+        <script src="firstjavascript.js"></script>
+        
+        <nav><a href="index.html">Home</nav>
+
+    </body>
+</html>
